@@ -13,6 +13,7 @@ table_create_actors = """
     CREATE TABLE IF NOT EXISTS actors (
         id int,
         login text,
+        firstname text,
         PRIMARY KEY(id)
     )
 """
