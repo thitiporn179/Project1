@@ -45,10 +45,12 @@ table_create_events = """
 create_table_queries = [
     table_create_actors,
     table_create_events,
+    table_create_repo,
 ]
 drop_table_queries = [
     table_drop_events,
     table_drop_actors,
+    table_drop_repo,
 ]
 
 
