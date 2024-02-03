@@ -13,7 +13,10 @@ table_create_actors = """
     CREATE TABLE IF NOT EXISTS actors (
         id int,
         login text,
-        firstname text,
+        display_login text,
+        gravatar_id varchar (50),
+        url varchar (200),
+        avatar_url varchar (200)
         PRIMARY KEY(id)
     )
 """
