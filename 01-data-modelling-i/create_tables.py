@@ -8,16 +8,28 @@ PostgresConn = NewType("PostgresConn", psycopg2.extensions.connection)
 
 table_drop_events = "DROP TABLE IF EXISTS events"
 table_drop_actors = "DROP TABLE IF EXISTS actors"
+table_drop_repo = "DROP TABLE IF EXISTS repo CASCADE"
+table_drop_payload = "DROP TABLE IF EXISTS payload CASCADE"
+table_drop_org = "DROP TABLE IF EXISTS org CASCADE"
+
 
 table_create_actors = """
     CREATE TABLE IF NOT EXISTS actors (
         id int,
         login text,
-        display_login text,
-        gravatar_id varchar (50),
-        url varchar (200),
-        avatar_url varchar (200)
+        display_login varchar(50),
+        gravatar_id varchar(50),
+        url varchar(200),
+        avatar_url varchar(200),
         PRIMARY KEY(id)
+    )
+"""
+table_create_repo = """
+    CREATE TABLE IF NOT EXISTS repo (
+        repo_id int,
+        repo_name text,
+        repo_url varchar(200),
+        PRIMARY KEY(repo_id)
     )
 """
 table_create_events = """
